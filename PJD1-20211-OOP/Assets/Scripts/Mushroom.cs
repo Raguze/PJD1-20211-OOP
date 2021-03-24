@@ -10,9 +10,4 @@ public class Mushroom : PowerUp
         Points = 800;
         PowerUpName = "Mushroom";
     }
-
-    public override void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision);
-    }
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerController : MonoBehaviour
 {
+    // Components
+    Rigidbody2D rb;
+
     // Dados
     float jumpForce;
     float runSpeed;
@@ -18,9 +21,14 @@ public class PlayerController : MonoBehaviour
     float starTime;
 
     public PowerUpType PowerUp { get; set; }
+
+    public PowerUpType TimedPowerUp { get; set; }
+
     public int Coins { get; set; }
     public int Life { get; set; }
     public int Points { get; set; }
+
+    public float Horizontal { get; set; }
 
     public void ShowInfo()
     {
@@ -53,5 +61,16 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        Vector2 rbVelocity = rb.velocity;
+        rbVelocity.x = Horizontal;
+        rb.velocity = rbVelocity;
+    }
 
 }

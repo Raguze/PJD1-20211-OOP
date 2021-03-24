@@ -18,4 +18,14 @@ public class PowerUp : Triggable
     {
         get { return PowerUpName + " type: " + Type + " points: " + Points; }
     }
+
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision);
+        PlayerController player = collision.GetComponent<PlayerController>();
+        if (player)
+        {
+            GameController.Instance().OnPowerUpTrigger(this);
+        }
+    }
 }
