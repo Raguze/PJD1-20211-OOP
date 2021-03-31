@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Poison : PowerUp
 {
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Type = PowerUpType.Poison;
         PowerUpName = "Poison";
     }

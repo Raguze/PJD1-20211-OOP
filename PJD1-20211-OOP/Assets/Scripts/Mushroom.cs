@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Mushroom : PowerUp
 {
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         Type = PowerUpType.Mushroom;
         Points = 800;
         PowerUpName = "Mushroom";
+
+        Speed = 0.2f;
+        DirectionX = 1f;
     }
 }

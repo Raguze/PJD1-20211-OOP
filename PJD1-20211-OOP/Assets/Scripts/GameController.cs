@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class GameController : MonoBehaviour
 {
     public PlayerController Player;
@@ -13,9 +14,22 @@ public class GameController : MonoBehaviour
 
     private float horizontal;
 
+    private List<IMovable> movables = new List<IMovable>();
+
+    public int movableCount;
+
     private void Awake()
     {
         gameController = this;
+
+        PowerUp[] powerUps = GameObject.FindObjectsOfType<PowerUp>();
+        foreach (PowerUp powerUp in powerUps)
+        {
+            if(powerUp is IMovable)
+            {
+                movables.Add(powerUp);
+            }
+        }
     }
 
 
@@ -52,6 +66,13 @@ public class GameController : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
         Player.Horizontal = horizontal;
+
+        // Movables
+        movableCount = movables.Count;
+        foreach(IMovable movable in movables)
+        {
+            movable.Move();
+        }
     }
 
     public static GameController Instance()
@@ -89,7 +110,7 @@ public class GameController : MonoBehaviour
     {
         Player.Points += powerUp.Points;
         Player.PowerUp = powerUp.Type;
-        Destroy(powerUp.gameObject);
+        DestroyPowerUp(powerUp);
     }
 
     void ActionTimedPowerUp(TimedPowerUp powerUp)
@@ -107,6 +128,12 @@ public class GameController : MonoBehaviour
         Debug.Log("End Timer");
         powerUp.OnTimerEnd.RemoveAllListeners();
         Player.TimedPowerUp = PowerUpType.None;
+        DestroyPowerUp(powerUp);
+    }
+
+    void DestroyPowerUp(PowerUp powerUp)
+    {
+        movables.Remove(powerUp);
         Destroy(powerUp.gameObject);
     }
 }

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Life : PowerUp
 {
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Type = PowerUpType.Life;
         Points = 5000;
         PowerUpName = "Life";
