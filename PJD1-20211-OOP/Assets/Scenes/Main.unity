@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 3256543366589727933, guid: d5d400b6d71c87d4ab18660fff633bff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.59
+      value: -2.4299998
       objectReference: {fileID: 0}
     - target: {fileID: 3256543366589727933, guid: d5d400b6d71c87d4ab18660fff633bff,
         type: 3}
@@ -187,6 +187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731806796283412710, guid: d5d400b6d71c87d4ab18660fff633bff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5d400b6d71c87d4ab18660fff633bff, type: 3}
@@ -338,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 2601107506862092803, guid: 5f96f96e3a7930049bb3466843676dc7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8449853069291546997, guid: 5f96f96e3a7930049bb3466843676dc7,
         type: 3}
@@ -379,6 +384,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   PowerUp: {fileID: 0}
   hp: 0
+  movableCount: 0
 --- !u!4 &2124739381
 Transform:
   m_ObjectHideFlags: 0
@@ -403,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 756537696666984800, guid: 56823e4b094d3704393315aa8d1b48dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.02
       objectReference: {fileID: 0}
     - target: {fileID: 756537696666984800, guid: 56823e4b094d3704393315aa8d1b48dd,
         type: 3}
@@ -472,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 3624584753948950924, guid: e3a1b29d907c9f542b6efff9d6ec6938,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.31
+      value: 0.28999996
       objectReference: {fileID: 0}
     - target: {fileID: 3624584753948950924, guid: e3a1b29d907c9f542b6efff9d6ec6938,
         type: 3}
@@ -529,6 +535,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Star
       objectReference: {fileID: 0}
+    - target: {fileID: 5727933617303002731, guid: e3a1b29d907c9f542b6efff9d6ec6938,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3a1b29d907c9f542b6efff9d6ec6938, type: 3}
 --- !u!1001 &7510556745843687506
@@ -543,10 +554,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower
       objectReference: {fileID: 0}
+    - target: {fileID: 379238873150316418, guid: d6ad51d6e529f664da9bcf26c1386ae5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7492218086133341145, guid: d6ad51d6e529f664da9bcf26c1386ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.99
+      value: -1.03
       objectReference: {fileID: 0}
     - target: {fileID: 7492218086133341145, guid: d6ad51d6e529f664da9bcf26c1386ae5,
         type: 3}
